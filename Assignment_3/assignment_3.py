@@ -63,18 +63,18 @@ l1 = 0.00001
 
 lowest_fce = 99999999999999999
 
-# #run grid search
-# for i in epoch:
-#     for j in batch_size:
-#         for k in alpha_str:
-#             for t in learning_rate:
-#                 temp = softmax_hyperparameters(X_train,y_train,X_test,y_test,10, i, j, k, t)[0]#get fmse value for each hyperaparamter
-#                 if temp < lowest_fce:
-#                     ep1 = i
-#                     b1 = j
-#                     a1 = k
-#                     l1 = t 
-#                     lowest_fce = temp
+#run grid search
+for i in epoch:
+    for j in batch_size:
+        for k in alpha_str:
+            for t in learning_rate:
+                temp = softmax_hyperparameters(X_train,y_train,X_test,y_test,10, i, j, k, t)[0]#get fmse value for each hyperaparamter
+                if temp < lowest_fce:
+                    ep1 = i
+                    b1 = j
+                    a1 = k
+                    l1 = t 
+                    lowest_fce = temp
 
 print("Epoch:",ep1)
 print("Batch_size:",b1)
